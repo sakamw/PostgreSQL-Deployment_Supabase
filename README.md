@@ -1,4 +1,4 @@
-# PostgreSQL Deployment with Supabase and pgAdmin - Complete Guide
+# PostgreSQL Deployment with Supabase and pgAdmin
 
 ## Table of Contents
 
