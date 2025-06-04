@@ -8,7 +8,6 @@
 1. [Database Management](#database-management)
 1. [Security Configuration](#security-configuration)
 1. [Troubleshooting](#troubleshooting)
-1. [Best Practices](#best-practices)
 
 ## Overview
 
@@ -198,15 +197,18 @@ GRANT USAGE ON SEQUENCE users_id_seq TO app_user;
 ### 1. Common Connection Issues
 
 #### A. "Connection Refused" Error
+
 In case you’re using pgAdmin to connect to your Supabase database and you get a ‘Connection Refused’ error, here’s what you can do:
 
 **Possible causes and solutions:**
+
 - Verify that you’ve entered the correct host address and port number (Supabase typically uses port 5432).
 - Check internet connectivity to ensure you're online.
 - Ensure Supabase project is active (not paused or deleted).
 - Verify firewall settings —it may be blocking the connection.
 
 #### B. "Authentication Failed" Error
+
 If you enter your credentials and get an ‘Authentication Failed’ error when connecting through pgAdmin:
 
 **Solutions:**
@@ -216,6 +218,7 @@ If you enter your credentials and get an ‘Authentication Failed’ error when 
 - If unsure, try resetting the database password in Supabase dashboard and try again.
 
 #### C. SSL Connection Issues
+
 If pgAdmin shows an error about SSL when connecting to Supabase:
 
 **Solutions:**
@@ -227,6 +230,7 @@ If pgAdmin shows an error about SSL when connecting to Supabase:
 ### 2. Performance Issues
 
 #### A. Slow Query Performance
+
 If your queries are taking too long to run, use the query below in your Supabase SQL Editor to check which queries are slow:
 
 **Diagnosis:**
@@ -249,6 +253,7 @@ LIMIT 10;
 ## 3. Best Practices
 
 ### Development Workflow
+
 To avoid deployment issues in the future:
 
 1. **Use separate environments**: Create different Supabase projects for development, staging, and production
@@ -257,6 +262,7 @@ To avoid deployment issues in the future:
 1. **Regular backups**: Schedule automated backups for production data
 
 ### Performance Optimization
+
 To keep your database fast and stable:
 
 1. **Indexing strategy**: Create indexes especially on columns you filter or sort by.
