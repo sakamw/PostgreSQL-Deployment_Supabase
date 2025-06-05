@@ -1,4 +1,4 @@
-# 🚀 Supabase PostgreSQL: Connect Using `psql` + Secure with RLS
+# Supabase PostgreSQL: Connect Using `psql` + Secure with RLS
 
 This guide covers how to:
 
