@@ -52,7 +52,7 @@ ALTER TABLE users ENABLE ROW LEVEL SECURITY;
 
 Policies define **who can do what** with each row. Supabase uses `auth.uid()` to reference the current logged-in-user.
 
-1. SELECT Policy - Read Own Rows
+- SELECT Policy - Read Own Rows
 
 ```sql
 CREATE POLICY "Users can view own data" ON users
@@ -60,7 +60,7 @@ CREATE POLICY "Users can view own data" ON users
   USING (auth.uid() = id);
 ```
 
-2. INSERT Policy - Add Own Rows
+- INSERT Policy - Add Own Rows
 
 ```sql
 CREATE POLICY "Users can insert own data" ON users
@@ -68,7 +68,7 @@ CREATE POLICY "Users can insert own data" ON users
   WITH CHECK (auth.uid() = id);
 ```
 
-3. UPDATE Policy - Edit Own Rows
+- UPDATE Policy - Edit Own Rows
 
 ```sql
 CREATE POLICY "Users can update own data" ON users
