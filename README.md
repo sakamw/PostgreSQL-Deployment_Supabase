@@ -31,10 +31,11 @@ Create a Table
 
 ```sql
 CREATE TABLE users (
-   id SERIAL primary KEY,
-   email VARCHAR(255) UNIQUE NOT NULL,
-   created_at TIMESTAMP DEFAULT NOW()
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),  -- UUID ID
+  email TEXT UNIQUE NOT NULL,
+  created_at TIMESTAMP DEFAULT NOW()
 );
+
 ```
 
 ## Step3: Secure Data Using Row Level Security (RSL)
@@ -59,7 +60,7 @@ CREATE POLICY "Users can view own data" ON users
   USING (auth.uid() = id);
 ```
 
-1. INSERT Policy - Add Own Rows
+2. INSERT Policy - Add Own Rows
 
 ```sql
 CREATE POLICY "Users can insert own data" ON users
@@ -67,7 +68,7 @@ CREATE POLICY "Users can insert own data" ON users
   WITH CHECK (auth.uid() = id);
 ```
 
-1. UPDATE Policy - Edit Own Rows
+3. UPDATE Policy - Edit Own Rows
 
 ```sql
 CREATE POLICY "Users can update own data" ON users
